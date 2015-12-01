@@ -1,0 +1,15 @@
+/recon/
+/node_modules/
+/static/lib/
+/logs/
+/data/
+/tmp/
+
+*.egg-info/
+/djrecon/settings_local.py
+
+!*.gitignore
+
+*.pyc
+*.swp
+*.sqlite3
