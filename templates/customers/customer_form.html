@@ -1,0 +1,7 @@
+{% extends 'base.html' %}{% load i18n %}
+
+{% block content %}<h1>{% trans "update profile"|title %}</h1><hr>
+<form method="post" action="">{% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">{% trans "save"|capfirst %}</button>
+</form>{% endblock %}

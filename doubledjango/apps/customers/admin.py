@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 from django.contrib import admin
 
-# Register your models here.
+from .models import Customer
+
+
+class CustomerAdmin(admin.ModelAdmin):
+    search_fields = ('user__first_name', 'user__last_name', 'user__email')
+
+admin.site.register(Customer, CustomerAdmin)

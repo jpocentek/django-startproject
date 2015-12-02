@@ -6,7 +6,7 @@
 /tmp/
 
 *.egg-info/
-/djrecon/settings_local.py
+/doubledjango/settings_local.py
 
 !*.gitignore
 
