@@ -126,6 +126,6 @@ MESSAGE_TAGS = {
 # DO NOT insert anything below unless you REALLY KNOW what you're doing!!!     #
 # ------------------------------------------------------------------------------
 
-execfile(os.path.join(BASE_DIR, {{ PROJECT_NAME }}, 'loggers.py'))
+execfile(os.path.join(BASE_DIR, '{{ PROJECT_NAME }}', 'loggers.py'))
 
-execfile(os.path.join(BASE_DIR, {{ PROJECT_NAME }}, 'settings_local.py'))
+execfile(os.path.join(BASE_DIR, '{{ PROJECT_NAME }}', 'settings_local.py'))

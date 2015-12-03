@@ -15,7 +15,7 @@ while getopts "d?:f:" opt; do
 done
 
 if [ -f the_maker.py ]; then
-    mv startproject $projectname
+    mv doubledjango $projectname
     python the_maker.py $projectname
     rm the_maker.py
 fi
