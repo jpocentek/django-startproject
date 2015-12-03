@@ -3,10 +3,10 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from .models import Customer
+from .models import UserProfile
 
 
-class CustomerAdmin(admin.ModelAdmin):
+class ProfileAdmin(admin.ModelAdmin):
     search_fields = ('user__first_name', 'user__last_name', 'user__email')
 
-admin.site.register(Customer, CustomerAdmin)
+admin.site.register(UserProfile, ProfileAdmin)

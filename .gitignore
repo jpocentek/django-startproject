@@ -6,7 +6,7 @@
 /tmp/
 
 *.egg-info/
-/doubledjango/settings_local.py
+/{{ PROJECT_NAME }}/settings_local.py
 
 !*.gitignore
 

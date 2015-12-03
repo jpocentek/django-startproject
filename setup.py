@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="doubledjango",
+    name="{{ PROJECT_NAME }}",
     version='0.0.0',
 
     url="",

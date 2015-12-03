@@ -19,6 +19,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = []
 
+PROJECT_NAME = "{{ PROJECT_NAME }}"
+
 
 # Application definition
 
@@ -32,7 +34,7 @@ INSTALLED_APPS = (
 
     # Project applications
     'doubledjango.apps.core',
-    'doubledjango.apps.customers',
+    'doubledjango.apps.accounts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -44,6 +46,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'doubledjango.apps.core.middleware.TimezoneMiddleware',
+    'doubledjango.apps.core.middleware.LanguageMiddleware',
 )
 
 ROOT_URLCONF = 'doubledjango.urls'
@@ -75,21 +79,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'data', 'default.sqlite3'),
     },
-    'client_1': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'data', 'client_1.sqlite3'),
-    },
-    'client_2': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'client_2.sqlite3'),
-    },
 }
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -99,6 +95,15 @@ USE_L10N = True
 
 USE_TZ = True
 
+from django.utils.translation import ugettext_lazy as _
+
+LANGUAGES = (
+    ('pl', _("polish")),
+    ('en', _("english")),
+)
+
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -106,10 +111,21 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILE_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
+
+# Messages framework adjustements for Bootstrap
+# https://docs.djangoproject.com/en/1.9/ref/contrib/messages/#message-tags
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+    50: 'danger',
+}
+
+
 # ------------------------------------------------------------------------------
 # DO NOT insert anything below unless you REALLY KNOW what you're doing!!!     #
 # ------------------------------------------------------------------------------
 
-execfile(os.path.join(BASE_DIR, 'doubledjango', 'loggers.py'))
+execfile(os.path.join(BASE_DIR, {{ PROJECT_NAME }}, 'loggers.py'))
 
-execfile(os.path.join(BASE_DIR, 'doubledjango', 'settings_local.py'))
+execfile(os.path.join(BASE_DIR, {{ PROJECT_NAME }}, 'settings_local.py'))
