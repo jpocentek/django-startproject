@@ -27,3 +27,5 @@ if [ $debug -eq "1" ]
 then
     pip install -r requirements_dev.txt
 fi
+
+git remote rm origin

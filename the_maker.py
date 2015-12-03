@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
@@ -24,5 +23,6 @@ def run(project_name):
 
 
 if __name__ == '__main__':
+    """ Plese note that there is no error reporting so far! """
     name = sys.argv[1]
     run(name)
