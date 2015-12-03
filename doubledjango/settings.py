@@ -33,8 +33,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Project applications
-    'doubledjango.apps.core',
-    'doubledjango.apps.accounts',
+    '{{ PROJECT_NAME }}.apps.core',
+    '{{ PROJECT_NAME }}.apps.accounts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -46,11 +46,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'doubledjango.apps.core.middleware.TimezoneMiddleware',
-    'doubledjango.apps.core.middleware.LanguageMiddleware',
+    '{{ PROJECT_NAME }}.apps.core.middleware.TimezoneMiddleware',
+    '{{ PROJECT_NAME }}.apps.core.middleware.LanguageMiddleware',
 )
 
-ROOT_URLCONF = 'doubledjango.urls'
+ROOT_URLCONF = '{{ PROJECT_NAME }}.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'doubledjango.wsgi.application'
+WSGI_APPLICATION = '{{ PROJECT_NAME }}.wsgi.application'
 
 
 # Database

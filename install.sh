@@ -14,10 +14,10 @@ while getopts "d?:f:" opt; do
     esac
 done
 
-if [ -f replace_names.py ]; then
+if [ -f the_maker.py ]; then
     mv startproject $projectname
-    python replace_names.py $projectname
-    rm replace_names.py
+    python the_maker.py $projectname
+    rm the_maker.py
 fi
 
 python setup.py develop
