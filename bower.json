@@ -1,0 +1,14 @@
+{
+  "name": "{{ PROJECT_NAME }}",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Jakub Pocentek"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "private": true
+}

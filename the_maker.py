@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 import os
 import sys
 
-CONFIG_FILES = ('.gitignore', 'setup.py', 'settings.py', 'manage.py',)
+CONFIG_FILES = ('.gitignore', 'setup.py', 'settings.py',
+                'manage.py', 'bower.json', 'package.json',)
 
 
 def run(project_name):
