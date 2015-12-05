@@ -27,6 +27,7 @@ python setup.py develop
 pip install -r requirements.txt
 npm install
 ./node_modules/.bin/bower install
+python scripts/build.py
 
 if [ $debug -eq "1" ]
 then

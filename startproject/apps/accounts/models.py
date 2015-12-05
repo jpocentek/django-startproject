@@ -7,11 +7,11 @@ import urllib
 
 from django.conf import settings
 from django.db import models
+from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
-
-User = settings.AUTH_USER_MODEL
 
 
 def get_timezone_choices():
@@ -50,3 +50,15 @@ class UserProfile(models.Model):
             'd': getattr(settings, 'GRAVATAR_IMG_DEFAULT', 'retro'),})
         return "https://www.gravatar.com/avatar/{}?{}".format(
                     hashlib.md5(email).hexdigest(), params)
+
+
+def create_user_profile(sender, instance, created, **kwargs):
+    """ Create UserProfile instance for every new user. """
+    try:
+        profile = instance.profile
+    except ObjectDoesNotExist:
+        profile = UserProfile.objects.create(user=instance)
+    return profile
+
+
+models.signals.post_save.connect(create_user_profile, sender=User)
