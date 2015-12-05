@@ -109,7 +109,7 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILE_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 
 # Messages framework adjustements for Bootstrap

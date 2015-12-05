@@ -1,6 +1,7 @@
 /recon/
 /node_modules/
 /static/lib/
+/static/dist/
 /logs/
 /data/
 /tmp/

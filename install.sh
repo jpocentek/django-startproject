@@ -19,10 +19,14 @@ if [ -f the_maker.py ]; then
     python the_maker.py $projectname
     rm the_maker.py
     git remote rm origin
+    git add --all .
+    git commit -am "Initial commit"
 fi
 
 python setup.py develop
 pip install -r requirements.txt
+npm install
+./node_modules/.bin/bower install
 
 if [ $debug -eq "1" ]
 then

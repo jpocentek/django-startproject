@@ -10,5 +10,8 @@
     "amd"
   ],
   "homepage": "",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
 }
