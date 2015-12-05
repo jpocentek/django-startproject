@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import codecs
 import os
 import sys
 
@@ -17,9 +18,9 @@ def run(project_name):
     for root, path, files in os.walk(os.getcwd()):
         for fname in files:
             if fname in CONFIG_FILES:
-                with open(os.path.join(root, fname), 'r') as f:
+                with codecs.open(os.path.join(root, fname), 'r', 'utf-8') as f:
                     data = f.read().replace('{{ PROJECT_NAME }}', project_name)
-                with open(os.path.join(root, fname), 'w') as f:
+                with codecs.open(os.path.join(root, fname), 'w', 'utf-8') as f:
                     f.write(data)
     create_settings(project_name)
 
