@@ -3,7 +3,7 @@
 # Run `install.sh -d` to include development dependencies.
 
 debug=0
-projectname=""
+projectname="startproject"
 
 while getopts "d?:f:" opt; do
     case $opt in
@@ -18,6 +18,7 @@ if [ -f the_maker.py ]; then
     mv startproject $projectname
     python the_maker.py $projectname
     rm the_maker.py
+    git remote rm origin
 fi
 
 python setup.py develop
@@ -27,5 +28,3 @@ if [ $debug -eq "1" ]
 then
     pip install -r requirements_dev.txt
 fi
-
-git remote rm origin
