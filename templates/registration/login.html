@@ -1,0 +1,16 @@
+{% extends 'base.html' %}{% load i18n %}
+
+{% block content %}<h1>{% trans "login"|capfirst %}</h1>
+{% if form.errors %}<p class="alert alert-danger">{% trans "Invalid login credentials" %}</p>{% endif %}
+<form action="" method="post" class="form-horizontal">{% csrf_token %}
+  {% for field in form %}<div class="form-group">
+    <label for="id_{{ field.name }}" class="control-label col-sm-3">{{ field.label|capfirst }}</label>
+    <div class="col-sm-9">{{ field }}</div>
+  </div>{% endfor %}
+  <div class="form-group">
+    <div class="col-sm-9 col-sm-offset-3">
+      <button type="submit" class="btn btn-primary">{% trans "login"|capfirst %}</button>
+    </div>
+  </div>
+</form>
+<a href="{% url 'accounts:register' %}">{% trans "register"|capfirst %}</a>{% endblock %}

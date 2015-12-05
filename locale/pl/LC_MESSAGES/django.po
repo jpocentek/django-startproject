@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: doubledjango 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-05 12:45+0000\n"
-"PO-Revision-Date: 2015-12-05 13:46+0100\n"
+"POT-Creation-Date: 2015-12-05 17:14+0000\n"
+"PO-Revision-Date: 2015-12-05 17:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: Jakub Pocentek <jpocentek@gmail.com>\n"
 "Language: pl\n"
@@ -19,43 +19,87 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.6\n"
 
-#: startproject/apps/accounts/models.py:23
+#: startproject/apps/accounts/forms.py:20
+#: startproject/apps/accounts/forms.py:44
+msgid "email"
+msgstr "email"
+
+#: startproject/apps/accounts/forms.py:22
+#: startproject/apps/accounts/forms.py:53
+msgid "password"
+msgstr "hasło"
+
+#: startproject/apps/accounts/forms.py:47
+#: startproject/apps/accounts/forms.py:97
+msgid "first name"
+msgstr "imię"
+
+#: startproject/apps/accounts/forms.py:50
+#: startproject/apps/accounts/forms.py:100
+msgid "last name"
+msgstr "nazwisko"
+
+#: startproject/apps/accounts/forms.py:56
+msgid "repeat password"
+msgstr "powtórz hasło"
+
+#: startproject/apps/accounts/forms.py:68
+msgid "Email address already taken"
+msgstr ""
+
+#: startproject/apps/accounts/models.py:26
 msgid "user"
 msgstr "użytkownik"
 
-#: startproject/apps/accounts/models.py:25
+#: startproject/apps/accounts/models.py:28
 msgid "timezone"
 msgstr "strefa czasowa"
 
-#: startproject/apps/accounts/models.py:28
+#: startproject/apps/accounts/models.py:31
 msgid "language"
 msgstr "język"
 
-#: startproject/apps/accounts/models.py:33
+#: startproject/apps/accounts/models.py:36
 msgid "user profile"
 msgstr "profil użytkownika"
 
-#: startproject/apps/accounts/models.py:34
+#: startproject/apps/accounts/models.py:37
 msgid "user profiles"
 msgstr "profile użytkowników"
 
-#: startproject/apps/accounts/views.py:32
+#: startproject/apps/accounts/views.py:53
+#, fuzzy
+#| msgid "registration"
+msgid "Registration successfull"
+msgstr "rejestracja"
+
+#: startproject/apps/accounts/views.py:73
 msgid "Settings saved"
 msgstr "Zapisano ustawienia"
 
-#: startproject/settings.py:103
+#: startproject/settings.py:110
 msgid "polish"
 msgstr "polski"
 
-#: startproject/settings.py:104
+#: startproject/settings.py:111
 msgid "english"
 msgstr "angielski"
 
 #: templates/accounts/userprofile_form.html:3
+#: templates/accounts/userprofile_form.html:8 templates/navigation.html:18
+#: templates/registration/password_change.html:8
 msgid "update profile"
 msgstr "aktualizuj profil"
 
-#: templates/accounts/userprofile_form.html:6
+#: templates/accounts/userprofile_form.html:12
+#: templates/registration/password_change.html:3
+#: templates/registration/password_change.html:12
+msgid "change password"
+msgstr "zmień hasło"
+
+#: templates/accounts/userprofile_form.html:31
+#: templates/registration/password_change.html:25
+#: templates/registration/register.html:16
 msgid "save"
 msgstr "zapisz"
 
@@ -63,9 +107,37 @@ msgstr "zapisz"
 msgid "close"
 msgstr "zamknij"
 
-#: templates/base.html:22
+#: templates/base.html:23
 msgid "copyrights"
 msgstr "copyrights"
+
+#: templates/navigation.html:5
+msgid "toggle navigation"
+msgstr "przełącz nawigację"
+
+#: templates/navigation.html:14 templates/registration/login.html:3
+#: templates/registration/login.html:12
+msgid "login"
+msgstr "zaloguj"
+
+#: templates/navigation.html:19
+msgid "logout"
+msgstr "wyloguj"
+
+#: templates/registration/login.html:4
+msgid "Invalid login credentials"
+msgstr "Nieprawidłowe dane logowania"
+
+#: templates/registration/login.html:16
+msgid "register"
+msgstr "zarejestruj"
+
+#: templates/registration/register.html:3
+msgid "registration"
+msgstr "rejestracja"
+
+#~ msgid "forgot password"
+#~ msgstr "zapomniałem hasło"
 
 #~ msgid "customer"
 #~ msgstr "klient"

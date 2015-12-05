@@ -51,7 +51,14 @@ MIDDLEWARE_CLASSES = (
     '{{ PROJECT_NAME }}.apps.core.middleware.LanguageMiddleware',
 )
 
+
 ROOT_URLCONF = '{{ PROJECT_NAME }}.urls'
+
+LOGIN_URL = '/accounts/login/'
+LOGOUT_URL = '/accounts/logout/'
+LOGIN_REDIRECT_URL = '/accounts/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
+
 
 TEMPLATES = [
     {
