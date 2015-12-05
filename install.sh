@@ -7,7 +7,7 @@ projectname="startproject"
 
 while getopts "d?:f:" opt; do
     case $opt in
-    d\?)
+    d)
         debug=1;;
     f)
         projectname=$OPTARG;;
