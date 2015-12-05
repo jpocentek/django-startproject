@@ -4,6 +4,7 @@
 /static/dist/
 /logs/
 /data/
+/media/
 /tmp/
 
 *.egg-info/
