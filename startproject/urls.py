@@ -17,6 +17,11 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap, index as sitemap_index
+
+from sitemaps import sitemaps
+
+handler500 = '{{ PROJECT_NAME }}.apps.core.views.handler500'
 
 # Urls for Grappelli will cause this settings to fail,
 # so Debug Toolbar should go first.
@@ -32,6 +37,9 @@ else:
 
 urlpatterns += [
     url(r'^grappelli/', include('grappelli.urls')),
+    url(r'^sitemap\.xml$', sitemap_index, {'sitemaps': sitemaps}),
+    url(r'^sitemap-(?P<section>.+)\.xml$', sitemap,
+        {'sitemaps': sitemaps, 'template_name': 'sitemaps/sitemap.xml'}),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('{{ PROJECT_NAME }}.apps.accounts.urls', namespace="accounts")),
 ]

@@ -32,6 +32,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+    'django.contrib.sitemaps',
 
     # Project applications
     '{{ PROJECT_NAME }}.apps.core',
@@ -47,6 +50,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     '{{ PROJECT_NAME }}.apps.core.middleware.TimezoneMiddleware',
     '{{ PROJECT_NAME }}.apps.core.middleware.LanguageMiddleware',
 )

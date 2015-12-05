@@ -3,8 +3,12 @@ from __future__ import unicode_literals
 
 SECRET_KEY = "{{ key }}"
 
+USE_HTTPS = False
+
 DEBUG = True
 
-ALLOWED_HOTS = ['*']
+ALLOWED_HOSTS = ['*']
+
+SITE_ID = 1
 
 TIMEZONE = "Europe/Warsaw"
