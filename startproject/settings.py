@@ -25,6 +25,7 @@ PROJECT_NAME = "{{ PROJECT_NAME }}"
 # Application definition
 
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -63,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                '{{ PROJECT_NAME }}.apps.core.context_processors.debug_processor',
             ],
         },
     },
@@ -110,6 +112,8 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Messages framework adjustements for Bootstrap
@@ -129,3 +133,10 @@ MESSAGE_TAGS = {
 execfile(os.path.join(BASE_DIR, '{{ PROJECT_NAME }}', 'loggers.py'))
 
 execfile(os.path.join(BASE_DIR, '{{ PROJECT_NAME }}', 'settings_local.py'))
+
+
+if DEBUG:
+    INSTALLED_APPS += (
+        'debug_toolbar',
+    )
+    MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)

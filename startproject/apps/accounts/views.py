@@ -28,6 +28,6 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         return reverse('accounts:profile')
 
-    def post(self, request, **kwargs):
-        messages.success(request, _("Settings saved"))
-        return super(ProfileUpdateView, self).post(request, **kwargs)
+    def form_valid(self, form):
+        messages.success(self.request, _("Settings saved"))
+        return super(ProfileUpdateView, self).form_valid(form)
