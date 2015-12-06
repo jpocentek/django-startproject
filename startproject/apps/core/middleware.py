@@ -30,7 +30,7 @@ class LanguageMiddleware(object):
     Adjust language settings based on user profile preferences.
     """
     def process_request(self, request):
-        language = None
+        language = translation.get_language_from_request(request)
         if request.user.is_authenticated():
             try:
                 language = request.user.profile.language

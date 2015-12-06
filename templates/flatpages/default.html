@@ -1,3 +1,4 @@
 {% extends 'base.html' %}{% load i18n evaluate_tags %}
 
-{% block content %}{% evaluate flatpage.content %}{% endblock %}
+{% block content %}<h1>{{ flatpage.title }}</h1><hr>
+{% evaluate flatpage.content %}{% endblock %}
