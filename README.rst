@@ -27,4 +27,4 @@ Repository
 
 During installation, this project will be DETATCHED from main repository. It is
 intentional. If you want to develop remotely, you have to provide new upstream
-by yourself (see man git remote).
+by yourself (see ``man git remote`` if you don't know what I'm talking about).
