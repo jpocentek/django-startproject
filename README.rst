@@ -11,6 +11,10 @@ Create virtualenv::
 
     mkvirtualenv <project name>
 
+Create directory::
+
+    mkdir <project name>
+
 Change directory::
 
     cd <project name>
