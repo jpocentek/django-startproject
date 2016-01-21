@@ -10,7 +10,7 @@ from django.shortcuts import redirect
 from django.utils.translation import ugettext as _
 from django.views.generic.edit import FormView, UpdateView
 
-from ..core.views import LoginRequiredMixin
+from core.views import LoginRequiredMixin
 from .forms import LoginForm, RegisterForm, UserProfileForm
 from .models import UserProfile
 

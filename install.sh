@@ -25,6 +25,7 @@ fi
 
 python setup.py develop
 pip install -r requirements.txt
+add2virtualenv ./$projectname/apps
 npm install
 ./node_modules/.bin/bower install
 python scripts/build.py

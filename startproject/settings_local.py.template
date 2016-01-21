@@ -12,3 +12,23 @@ ALLOWED_HOSTS = ['*']
 SITE_ID = 1
 
 TIMEZONE = "Europe/Warsaw"
+
+# DATABASES = {
+#     'default': {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": "dbname",
+#         "USER": "dbuser",
+#         "HOST": "dbhost",
+#         "PASSWORD": "dbpass",
+#         "PORT": 5432
+#     }
+# }
+#
+# EMAIL_HOST = 'localhost'
+# EMAIL_PORT = 25
+# EMAIL_HOST_USER = None
+# EMAIL_HOST_PASSWORD = None
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
+# EMAIL_DEFAULT_ADDRESS = 'admin@mydomain.com'
+# DEFAULT_FROM_EMAIL = 'noreply@mydomain.com'

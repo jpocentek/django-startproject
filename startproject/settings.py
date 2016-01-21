@@ -37,8 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
 
     # Project applications
-    '{{ PROJECT_NAME }}.apps.core',
-    '{{ PROJECT_NAME }}.apps.accounts',
+    'core',
+    'accounts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,8 +51,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-    '{{ PROJECT_NAME }}.apps.core.middleware.TimezoneMiddleware',
-    '{{ PROJECT_NAME }}.apps.core.middleware.LanguageMiddleware',
+    'core.middleware.TimezoneMiddleware',
+    'core.middleware.LanguageMiddleware',
 )
 
 
@@ -75,7 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                '{{ PROJECT_NAME }}.apps.core.context_processors.debug_processor',
+                'core.context_processors.debug_processor',
             ],
         },
     },
