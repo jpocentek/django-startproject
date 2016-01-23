@@ -31,6 +31,10 @@ dependencies at once, run this command::
 
     ./install -df <project_name>
 
+Now you have to add projects applications into Python path::
+
+    add2virtualenv ./<project_name>/apps
+
 And you are ready to go with standard Django installation process (creating
 database and superuser etc.)
 

@@ -15,7 +15,7 @@ setup(
     ],
 
     install_requires=(
-        'Django==1.9',
+        'Django==1.8.7',
     )
 )
 
