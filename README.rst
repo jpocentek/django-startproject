@@ -9,15 +9,15 @@ Installation
 
 Create virtualenv::
 
-    mkvirtualenv <project name>
+    mkvirtualenv <project_name>
 
 Create directory::
 
-    mkdir <project name>
+    mkdir <project_name>
 
 Change directory::
 
-    cd <project name>
+    cd <project_name>
 
 Clone repository::
 
